@@ -9,7 +9,7 @@ const StatsCard = ({name, num, icon})=>{
             </div>
 
             <div className='card-box'>
-                <i className={`fa-solid ${icon}`}></i>
+                <i className={`fa-solid ${icon || ''}`}></i>
             </div>
         </div>
     )

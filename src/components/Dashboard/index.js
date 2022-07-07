@@ -1,19 +1,12 @@
-import {useQuery} from 'react-query';
-import {fetchData} from '../../utils/utils';
+import {useContext} from 'react';
+import AppContext from '../../context/AppContext';
 import StatsCard from '../Card';
 import Chart from '../Chart';
-import FlashCard from '../FlashCard';
+import FlashCard from '../FlashCards/Course';
 import './index.css';
 
 const Dashboard = ()=>{
-
-    const schoolsQuery = useQuery('schools', ()=>fetchData('trainingSchools'));
-    const coursesQuery = useQuery('courses', ()=>fetchData('courses'));
-    const contactsQuery = useQuery('contacts', ()=>fetchData('contacts'));
-
-    if(schoolsQuery.isLoading || coursesQuery.isLoading || contactsQuery.isLoading) return <h3>Loading...</h3>;
-
-    if(schoolsQuery.error || coursesQuery.error || contactsQuery.error) return <p>{`An error has occurred: ${schoolsQuery.error || coursesQuery.error || contactsQuery.error}`}</p>;
+    const {coursesQuery,contactsQuery,schoolsQuery} = useContext(AppContext);
 
     const coursesDataset = {};
     let courses = coursesQuery.data['data'];

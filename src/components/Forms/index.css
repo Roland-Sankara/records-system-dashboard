@@ -1,0 +1,45 @@
+.form-box{
+    text-align: left;
+    width:70%;
+    margin: 3rem auto;
+
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+}
+
+.form-group input{
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    padding:.5rem 1rem;
+    width: 100%;
+    font-family: inherit;
+    color: #888585;
+    font-size: 1rem;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+
+fieldset{
+    margin:2rem 0;
+}
+
+.district{
+    width:50%;
+}
+
+.district select{
+    font-size: 1rem;
+    font-family: inherit;
+    padding: .2rem;
+}

@@ -1,0 +1,23 @@
+.button{
+    display: flex;
+    gap:1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    background: #E87121;
+    font-weight: 700;
+    color: white;
+    font-family: inherit;
+    font-size: .8rem;
+    transition: .3s;
+}
+
+.button:hover{
+    cursor: pointer;
+    transform: translateX(-.5rem);
+}
+
+.button span{
+    letter-spacing: 2px;
+}
