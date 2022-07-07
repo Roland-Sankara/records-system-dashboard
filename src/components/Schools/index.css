@@ -1,4 +1,4 @@
-.school-cards{
+.section-cards{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,14 +7,14 @@
     width: 100%;
 }
 
-.sch-header{
+.sct-header{
     margin: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sch-header h3{
+.sct-header h3{
     text-align: left;
     color: #888585;
     padding: .5rem 2rem;
