@@ -1,5 +1,5 @@
 const fetchData = async(endpoint) => {
-    const API = `https://www.registration.unmc.ug/api/v1/${endpoint}/`
+    const API = `http://www.registration.unmc.ug/api/v1/${endpoint}/`
     const res = await fetch(API,{
         method: 'GET',
         headers: {
@@ -25,7 +25,7 @@ const graphData = (schoolsQuery)=>{
 }
 
 const postData = async(endpoint,data) => {
-    const API = `https://www.registration.unmc.ug/api/v1/${endpoint}/`
+    const API = `http://www.registration.unmc.ug/api/v1/${endpoint}/`
     const res = await fetch(API,{
         method: 'POST',
         headers: {
