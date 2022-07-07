@@ -1,0 +1,39 @@
+.school-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sch-header{
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sch-header h3{
+    text-align: left;
+    color: #888585;
+    padding: .5rem 2rem;
+}
+
+.fa-arrow-right-long{
+    font-size: inherit;
+    align-self: none;
+}
+
+.pagination{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+    margin:3rem 0;
+    padding: 0 2rem;
+}
+
+.pagination button:nth-of-type(2):hover{
+    transform: translateX(.5rem);
+}
