@@ -1,0 +1,18 @@
+.main-app-section{
+    padding: 0 1rem;
+    flex-basis: 80%;
+}
+  
+.app-banner{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: white;
+    padding: .5rem 2rem;
+    position: sticky;
+    top:0;
+}
+
+.app-banner h2{
+    text-align: left;
+    color: #888585;
+}
