@@ -1,0 +1,35 @@
+.flash-card{
+    display: flex;
+    justify-content: center;
+    gap:2rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: #112B3C;
+    color:white;
+    flex-basis: 35%;
+    width: 100%;
+    transition: .3s;
+}
+
+.flash-card h4{
+    border-radius: .7rem;
+    padding: .8rem 1.5rem;
+    background-color: #5a5656;
+    flex-basis: 20%;
+}
+
+.course-details{
+    text-align: left;
+    flex-basis: 50%;
+}
+
+.fa-arrow-right-long{
+    font-size: 2rem;
+    align-self: flex-end;
+}
+
+.flash-card:hover{
+    cursor: pointer;
+    transform: translateX(.5rem);
+}

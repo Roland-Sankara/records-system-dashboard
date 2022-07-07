@@ -8,6 +8,8 @@
     border-bottom-right-radius: 1rem;
     background: white;
     padding: .5rem 2rem;
+    position: sticky;
+    top:0;
 }
 
 .app-banner h2{

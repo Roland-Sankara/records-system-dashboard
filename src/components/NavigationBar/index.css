@@ -3,6 +3,8 @@ img{
 }
   
 .navigation-menu{
+    position: sticky;
+    top:0;
     height: 100vh;
     padding: 0;
     flex-basis: 20%;
@@ -13,17 +15,21 @@ img{
 .menu-list{
     list-style: none;
     margin:3rem 0;
+    font-size: 1.1rem;
 }
 
-.menu-list li{
+.menu-list a{
     display: flex;
     align-items: center;
     gap: 1rem;
     margin: 2rem 0;
     color: #888585;
+    text-decoration: none;
+    padding:.6rem;
+    transition: .3s;
 }
 
-.menu-list li:hover{
+.menu-list a:hover{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -31,4 +37,10 @@ img{
     color: #252525;
     font-weight: bold;
     cursor: pointer;
+}
+
+.highlight{
+    border-right: 5px solid #d6ab8e;
+    color: black;
+    font-weight: bold;
 }
