@@ -1,12 +1,15 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {useFormik} from 'formik';
 import {postData} from '../../utils/utils'
+import {useNavigate} from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import Button from '../Button';
 import './index.css';
 
 const SchoolForm = ()=>{
-    const {districtQuery} = useContext(AppContext);
+    const {districtQuery, contactsQuery, coursesQuery} = useContext(AppContext);
+    const navigate = useNavigate();
+    const [isloading,setIsLoading] = useState(false);
 
     const formik = useFormik({
         initialValues:{
@@ -18,30 +21,24 @@ const SchoolForm = ()=>{
             address:'',
             passRate:'',
             email:'',
-            courses: ["bc92b03f-b66d-4d16-a247-f4e4d0a1fe66"],
-            contacts: ["ae421c9b-ffb6-4ed6-b8b9-c57149517646"],
-            districtId: '',
-            district: {
-                id: "8302172c-499d-494e-8612-3451d9566a48",
-                name: "ZOMBO",
-                createdAt: "2022-04-30T01:16:35.432Z",
-                regionId: "9f2fa7d8-91de-48d2-83d7-2e19dda4c7bc"
-            }
+            courses: [coursesQuery.data['data'][Math.floor(Math.random()*coursesQuery.data['data'].length)].id],
+            contacts: [contactsQuery.data['data'][Math.floor(Math.random()*contactsQuery.data['data'].length)].id],
+            district: '',
+            // districtId: '',
         },
         onSubmit: async(values) =>{
             try {
+                setIsLoading(true);
                 const response = await postData('trainingSchools',values)
-                console.log(response)
-                
+                alert(JSON.stringify(response,null,2));
+                navigate('/schools');
             } catch (error) {
-                alert(error)
+                alert(error);
             }
         }
     });
     
     const districtDataset = districtQuery.data['data'];
-    // const courseDataset = courseQuery.data['data'].splice(0,11);
-    // const contactsDataset = contactsQuery.data['data'].splice(0,11);
 
 
     return(
@@ -95,7 +92,7 @@ const SchoolForm = ()=>{
 
             <div className="input-group district">
                 <label htmlFor="district">District</label>
-                <select id="district" name='districtId' onChange={formik.handleChange}>
+                <select id="district" name='district' onChange={formik.handleChange}>
                     <option selected>Select</option>
                     {districtDataset.map((district)=>(
                         <option key={district.id} value={district.id}>{district.name}</option>
@@ -104,7 +101,7 @@ const SchoolForm = ()=>{
                 </select>
             </div>
 
-            <Button type="submit" text={'Submit'} icon={'fa-paper-plane'} color={"#112B3C"}/>
+            <Button type="submit" text={isloading?'Loading...':'Submit'} icon={'fa-paper-plane'} color={"#112B3C"}/>
             
         </form>
     )

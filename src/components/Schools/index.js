@@ -34,12 +34,12 @@ const Schools = ()=>{
     }
 
     return (
-        <div className="schools-box">
-            <div className="sch-header">
+        <div className="section-box">
+            <div className="sct-header">
                 <h3>Schools</h3>
                 <Button text={"Add New"} icon={"fa-plus"} onClickFunc={()=>navigate('/schools/create')}/>
             </div>
-            <div className='school-cards'>
+            <div className='section-cards'>
                 {currentPageData().map((school,index)=><FlashCard key={index} school={school}/>)}
             </div>
 

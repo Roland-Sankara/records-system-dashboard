@@ -32,12 +32,12 @@ const Courses = ()=>{
     }
 
     return (
-        <div className="schools-box">
-            <div className="sch-header">
+        <div className="section-box">
+            <div className="sct-header">
                 <h3>Courses</h3>
-                <Button text={"Add New"} icon={"fa-plus"} onClickFunc={()=>navigate('/schools/create')}/>
+                <Button text={"Add New"} icon={"fa-plus"} onClickFunc={()=>navigate('/courses/create')}/>
             </div>
-            <div className='school-cards'>
+            <div className='section-cards'>
                 {currentPageData().map((course,index)=><FlashCard key={index} course={course}/>)}
             </div>
 
