@@ -2,7 +2,6 @@ import {useState} from 'react';
 import {useFormik} from 'formik';
 import {postData} from '../../utils/utils'
 import {useNavigate} from 'react-router-dom';
-// import AppContext from '../../context/AppContext';
 import Button from '../Button';
 import './index.css';
 
