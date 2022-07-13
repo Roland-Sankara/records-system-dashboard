@@ -1,12 +1,13 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 import {useQuery} from 'react-query';
-import {fetchDataById} from '../../utils/utils';
+import {fetchDataById, deleteData} from '../../utils/utils';
 import {useNavigate} from 'react-router-dom';
 import Button from '../Button/index';
 import AppContext from '../../context/AppContext';
 import './index.css';
 const CourseDetails = ()=>{
     const {entityId, setcurrEntityData} = useContext(AppContext);
+    const [isLoading,setIsLoading] = useState(false);
     const navigate = useNavigate();
 
     const courseData = useQuery('school', ()=>fetchDataById('courses',entityId),{cacheTime:0});
@@ -31,7 +32,15 @@ const CourseDetails = ()=>{
                     setcurrEntityData(courseDetails);
                     navigate('/courses/edit');
                     }}/>
-                <Button text={'Delete'} icon={'fa-trash'} color={'#B20600'}/>
+                <Button text={isLoading?'Loading...':'Delete'} icon={'fa-trash'} color={'#B20600'} onClickFunc={async()=>{
+                    setIsLoading(true);
+                    let response = await deleteData('courses',entityId);
+                    if(response['status_code'] === 200){
+                        setIsLoading(false);
+                        alert(`Course: (${courseDetails.name}) has been successfully deleted.`);
+                        navigate('/courses');
+                    } 
+                }}/>
             </div>
         </div>
     )
