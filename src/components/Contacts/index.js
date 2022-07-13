@@ -39,7 +39,7 @@ const Contacts = ()=>{
                 <Button text={"Add New"} icon={"fa-plus"} onClickFunc={()=>navigate('/contacts/create')}/>
             </div>
             <div className='section-cards'>
-                {currentPageData().map((contact,index)=><FlashCard key={index} contact={contact}/>)}
+                {currentPageData().map((contact,index)=><FlashCard key={index} contact={contact} />)}
             </div>
 
             <div className="pagination">

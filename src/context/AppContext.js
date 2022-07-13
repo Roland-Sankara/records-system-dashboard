@@ -6,6 +6,8 @@ const AppContext = createContext();
 
 const ContextProvider = ({children})=>{
     const [section, setSection] = useState('Dashboard');
+    const [entityId, setEntityId] = useState(null);
+    const [entityData, setEntityData] = useState(null);
 
     const schoolsQuery = useQuery('schools', ()=>fetchData('trainingSchools'));
     const coursesQuery = useQuery('courseList', ()=>fetchData('courses'));
@@ -21,9 +23,28 @@ const ContextProvider = ({children})=>{
         setSection(section);
     }
 
+    function setcurrEntity(id){
+        setEntityId(id);
+    }
+
+    function setcurrEntityData(data){
+        setEntityData(data);
+    }
+
     console.log(coursesQuery, 'context');
     return(
-        <AppContext.Provider value={{section,coursesQuery,districtQuery,contactsQuery, schoolsQuery,setCurrSection}}>
+        <AppContext.Provider value={{
+            section,
+            coursesQuery,
+            districtQuery,
+            contactsQuery, 
+            schoolsQuery,
+            entityId, 
+            entityData,
+            setCurrSection, 
+            setcurrEntity,
+            setcurrEntityData
+            }}>
             {children}
         </AppContext.Provider>
     )

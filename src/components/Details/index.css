@@ -1,0 +1,45 @@
+.entity-details{
+    margin: 2rem 1rem;
+}
+
+.content-sect{
+    display: flex;
+    justify-content: center;
+}
+.content-sect p{
+    text-align: left;
+    padding: .5rem 1rem;
+    background-color: white;
+    border-radius: .5rem;
+    display: inline-flex;
+    align-items: center;
+    flex-basis: 40%;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.content-sect h2{
+    color:#112B3C;
+}
+
+.content-sect p > span{
+    font-size: 1rem;
+    font-weight: 800;
+    padding-right: 1rem;
+    flex-basis: 30%;
+    color: #888585;
+}
+
+.drop-down{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: .6rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1.5rem auto;
+}
