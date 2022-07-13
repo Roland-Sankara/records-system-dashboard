@@ -11,6 +11,19 @@ const fetchData = async(endpoint) => {
     return res.json();
 } 
 
+const fetchDataById = async(endpoint, id) => {
+    const API = `http://www.registration.unmc.ug/api/v1/${endpoint}/${id}`
+    const res = await fetch(API,{
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4MDQ2NjgwLCJqdGkiOiIwZTRiYmViODM0NzY0NTRlOGM1NGM1ZjljMDc3MjdkYyIsInVzZXJfaWQiOiIxNTE4MzdlOC1iYmJhLTQ0OGYtODM5NC1lZGQwZmQ2OWQyZTciLCJyb2xlIjoicmVjb3JkcyBvZmZpY2VyIn0.HT51NRbQ6GJtDYx3m8zb6IVbuWnn4GzcDTn27G1MVig'
+        }
+    })
+
+    return res.json();
+} 
+
 const graphData = (schoolsQuery)=>{
     let counterObject = {}
     schoolsQuery.data['data'].forEach(school => {
@@ -38,8 +51,24 @@ const postData = async(endpoint,data) => {
     return res.json();
 } 
 
+const patchData = async(endpoint,data,id) => {
+    const API = `http://www.registration.unmc.ug/api/v1/${endpoint}/${id}`
+    const res = await fetch(API,{
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4MDQ2NjgwLCJqdGkiOiIwZTRiYmViODM0NzY0NTRlOGM1NGM1ZjljMDc3MjdkYyIsInVzZXJfaWQiOiIxNTE4MzdlOC1iYmJhLTQ0OGYtODM5NC1lZGQwZmQ2OWQyZTciLCJyb2xlIjoicmVjb3JkcyBvZmZpY2VyIn0.HT51NRbQ6GJtDYx3m8zb6IVbuWnn4GzcDTn27G1MVig'
+        },
+        body: JSON.stringify(data)
+    })
+
+    return res.json();
+} 
+
 export {
     fetchData,
+    fetchDataById,
     graphData,
-    postData
+    postData,
+    patchData
 }
