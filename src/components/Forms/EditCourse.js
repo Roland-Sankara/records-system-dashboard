@@ -32,6 +32,7 @@ const EditCourse = ()=>{
 
     return(
         <form className="form-box" onSubmit={formik.handleSubmit}>
+            <h3>Edit Course Details</h3>
 
             <div className="form-group">
                 <div className="input-group">

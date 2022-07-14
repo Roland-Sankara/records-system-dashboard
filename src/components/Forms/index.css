@@ -2,7 +2,12 @@
     text-align: left;
     width:70%;
     margin: 3rem auto;
+}
 
+.form-box > h3{
+    text-align: center;
+    color: #112B3C;
+    font-weight: 900;
 }
 
 .form-group{
@@ -35,8 +40,21 @@ fieldset{
     margin:2rem 0;
 }
 
-.district{
-    width:50%;
+.checkbox-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.checkbox{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+
+.contacts{
+    flex-basis: 8rem;
 }
 
 .district select{

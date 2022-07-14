@@ -30,6 +30,7 @@ const CourseForm = ()=>{
 
     return(
         <form className="form-box" onSubmit={formik.handleSubmit}>
+            <h3>Add New Course</h3>
 
             <div className="form-group">
                 <div className="input-group">
