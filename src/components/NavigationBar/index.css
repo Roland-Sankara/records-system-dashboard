@@ -44,3 +44,20 @@ img{
     color: black;
     font-weight: bold;
 }
+
+.burger-menu{
+    display: none;
+}
+
+/* Mobile and Tablet*/
+@media screen and (max-width: 900px) {
+    .navigation-menu{
+        display: block;
+        position: absolute;
+        transition: .5s;
+    }
+
+    .burger-menu{
+        display: block;
+    }
+}

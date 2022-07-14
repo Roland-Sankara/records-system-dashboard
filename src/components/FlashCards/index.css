@@ -39,3 +39,12 @@
     cursor: pointer;
     transform: translateX(.5rem);
 }
+
+/* Mobile and Tablet */
+@media screen and (max-width: 900px) {
+    .flash-card{
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto;
+    }
+}

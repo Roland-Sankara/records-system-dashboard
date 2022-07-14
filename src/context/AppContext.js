@@ -8,6 +8,7 @@ const ContextProvider = ({children})=>{
     const [section, setSection] = useState('Dashboard');
     const [entityId, setEntityId] = useState(null);
     const [entityData, setEntityData] = useState(null);
+    const [openMenu, setOpenMenu] = useState(false);
 
     const schoolsQuery = useQuery('schools', ()=>fetchData('trainingSchools'));
     const coursesQuery = useQuery('courseList', ()=>fetchData('courses'));
@@ -31,6 +32,10 @@ const ContextProvider = ({children})=>{
         setEntityData(data);
     }
 
+    function toggleMenuView(value){
+        setOpenMenu(value);
+    }
+
     console.log(coursesQuery, 'context');
     return(
         <AppContext.Provider value={{
@@ -41,9 +46,11 @@ const ContextProvider = ({children})=>{
             schoolsQuery,
             entityId, 
             entityData,
+            openMenu,
             setCurrSection, 
             setcurrEntity,
-            setcurrEntityData
+            setcurrEntityData,
+            toggleMenuView
             }}>
             {children}
         </AppContext.Provider>
