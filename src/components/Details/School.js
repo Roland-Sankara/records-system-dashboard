@@ -26,6 +26,7 @@ const SchoolDetails = ()=>{
                     <p><span>Health Facility: </span>{schoolDetails?.healthFacility || 'N/A'}</p>
                     <p><span>Pass Rate: </span>{schoolDetails?.passRate || 'N/A'}</p>
                     <p><span>Address: </span>{schoolDetails?.address || 'N/A'}</p>
+                    <p><span>Principal: </span>{schoolDetails?.principal || 'N/A'}</p>
                 </div>
 
                 <div>
