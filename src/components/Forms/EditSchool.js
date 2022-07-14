@@ -1,6 +1,7 @@
 import {useContext, useState} from 'react';
 import {useFormik} from 'formik';
-import {patchData} from '../../utils/utils'
+import {patchData} from '../../utils/utils';
+import {editSchoolSchema} from '../../utils/schemas-yup';
 import {useNavigate} from 'react-router-dom';
 import AppContext from '../../context/AppContext';
 import Button from '../Button';
@@ -25,6 +26,7 @@ const EditSchool = ()=>{
             contacts: [...entityData?.contacts.map(contact=>contact.id)] || [],
             district: entityData?.district?.id,
         },
+        validationSchema: editSchoolSchema,
         onSubmit: async(values) =>{
             try {
                 setIsLoading(true);
@@ -39,7 +41,7 @@ const EditSchool = ()=>{
     
     const districtDataset = districtQuery.data['data'];
     const coursesDataset = coursesQuery.data['data']; 
-    const contactsDataset = contactsQuery.data['data'].slice(0, 52); 
+    const contactsDataset = contactsQuery.data['data'].slice(0, 32); 
 
     return(
         <form className="form-box" onSubmit={formik.handleSubmit}>
@@ -49,16 +51,19 @@ const EditSchool = ()=>{
                 <div className="input-group">
                     <label htmlFor="name">Name</label>
                     <input id="name" name="name" type="text" value={formik.values.name} onChange={formik.handleChange}/>
+                    {formik.errors.name && formik.touched.name ? <div className='form-error'>{formik.errors.name}</div> : null}
                 </div>
 
                 <div className="input-group">
                     <label htmlFor="status">Registration Status</label>
                     <input id="status" name="registrationStatus" type="text" value={formik.values.registrationStatus} onChange={formik.handleChange}/>
+                    {formik.errors.registrationStatus && formik.touched.registrationStatus ? <div className='form-error'>{formik.errors.registrationStatus}</div> : null}
                 </div>
 
                 <div className="input-group">
                     <label htmlFor="principal">Principal</label>
                     <input id="principal" name="principal" type="text" value={formik.values.principal} onChange={formik.handleChange}/>
+                    {formik.errors.principal && formik.touched.principal ? <div className='form-error'>{formik.errors.principal}</div> : null}
                 </div>
             </div>
             
@@ -66,16 +71,19 @@ const EditSchool = ()=>{
                 <div className="input-group">
                     <label htmlFor="healthFacility">Health Facility</label>
                     <input id="healthFacility" name="healthFacility" type="text" value={formik.values.healthFacility} onChange={formik.handleChange}/>
+                    {formik.errors.healthFacility && formik.touched.healthFacility ? <div className='form-error'>{formik.errors.healthFacility}</div> : null}
                 </div>
 
                 <div className="input-group">
                     <label htmlFor="level">Level</label>
                     <input id="level" name="level" type="text" value={formik.values.level} onChange={formik.handleChange}/>
+                    {formik.errors.level && formik.touched.level ? <div className='form-error'>{formik.errors.level}</div> : null}
                 </div>
 
                 <div className="input-group">
                     <label htmlFor="address">Address</label>
                     <input id="address" name="address" type="text" value={formik.values.address} onChange={formik.handleChange}/>
+                    {formik.errors.address && formik.touched.address ? <div className='form-error'>{formik.errors.address}</div> : null}
                 </div>
             </div>
 
@@ -83,11 +91,13 @@ const EditSchool = ()=>{
                 <div className="input-group">
                     <label htmlFor="passRate">Pass Rate</label>
                     <input id="passRate" name="passRate" type="number" value={formik.values.passRate} onChange={formik.handleChange}/>
+                    {formik.errors.passRate && formik.touched.passRate ? <div className='form-error'>{formik.errors.passRate}</div> : null}
                 </div>
 
                 <div className="input-group">
                     <label htmlFor="email">Email</label>
                     <input id="email" name="email" type="email" value={formik.values.email} onChange={formik.handleChange}/>
+                    {formik.errors.email && formik.touched.email ? <div className='form-error'>{formik.errors.email}</div> : null}
                 </div>
 
                 <div className="input-group district">
@@ -99,6 +109,7 @@ const EditSchool = ()=>{
                             ))
                         }
                     </select>
+                    {formik.errors.district && formik.touched.district ? <div className='form-error'>{formik.errors.district}</div> : null}
                 </div>
             </div>
 
@@ -118,6 +129,7 @@ const EditSchool = ()=>{
                     </div>
                     
                     ))}
+                {formik.errors.courses && formik.touched.courses ? <div className='form-error'>{formik.errors.courses}</div> : null}
             </fieldset> 
 
             <fieldset onChange={formik.handleChange}>
@@ -135,6 +147,7 @@ const EditSchool = ()=>{
                             <label htmlFor={contact.id}>{contact.phoneNumber}</label>
                         </div>
                         ))}
+                    {formik.errors.contacts && formik.touched.contacts ? <div className='form-error'>{formik.errors.contacts}</div> : null}
                 </div>
             </fieldset>      
 

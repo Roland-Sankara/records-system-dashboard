@@ -65,7 +65,7 @@ const patchData = async(endpoint,data,id) => {
     return res.json();
 } 
 
-const deleteData = async(endpoint, id)=>{
+const deleteData = async(endpoint, id, setIsLoading)=>{
     let message = 'Are you sure you want to delete your profile?\nThis action is destructive and irreversible.'
     if(window.confirm(message)){
         const API = `http://www.registration.unmc.ug/api/v1/${endpoint}/${id}`
@@ -77,6 +77,8 @@ const deleteData = async(endpoint, id)=>{
             }
         });
         return res.json()
+    }else{
+        setIsLoading(false)
     }
 }
 

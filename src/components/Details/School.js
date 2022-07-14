@@ -43,12 +43,12 @@ const SchoolDetails = ()=>{
                     }}/>
                 <Button text={isLoading?'Loading...':'Delete'} icon={'fa-trash'} color={'#B20600'} onClickFunc={async()=>{
                     setIsLoading(true);
-                    let response = await deleteData('trainingSchools',entityId);
+                    let response = await deleteData('trainingSchools',entityId, setIsLoading);
                     if(response['status_code'] === 200){
                         setIsLoading(false);
                         alert(`School: (${schoolDetails.name}) has been successfully deleted.`);
                         navigate('/schools');
-                    } 
+                    }
                 }}/>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useFormik} from 'formik';
-import {postData} from '../../utils/utils'
+import {postData} from '../../utils/utils';
+import {createContactSchema} from '../../utils/schemas-yup';
 import {useNavigate} from 'react-router-dom';
 import Button from '../Button';
 import './index.css';
@@ -13,6 +14,7 @@ const ContactForm = ()=>{
         initialValues:{
             phoneNumber:''
         },
+        validationSchema: createContactSchema,
         onSubmit: async(values) =>{
             try {
                 setIsLoading(true);
@@ -31,7 +33,8 @@ const ContactForm = ()=>{
             <div className="form-group">
                 <div className="input-group">
                     <label htmlFor="phoneNumber">Phone Number</label>
-                    <input id="phoneNumber" name="phoneNumber" type="text" value={formik.values.phoneNumber} onChange={formik.handleChange}/>
+                    <input id="phoneNumber" name="phoneNumber" type="string" placeholder={'e.g 0712211232 or 071-221-1232'} value={formik.values.phoneNumber} onChange={formik.handleChange}/>
+                    {formik.errors.phoneNumber && formik.touched.phoneNumber ? <div className='form-error'>{formik.errors.phoneNumber}</div> : null}
                 </div>
             </div>
             
