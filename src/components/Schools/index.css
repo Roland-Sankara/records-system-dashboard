@@ -37,3 +37,12 @@
 .pagination button:nth-of-type(2):hover{
     transform: translateX(.5rem);
 }
+
+/* Mobile and Tablet*/
+@media screen and (max-width: 900px) {
+    .section-cards{
+        justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

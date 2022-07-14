@@ -71,3 +71,35 @@ form button{
     color:red;
     font-size: 1rem;
 }
+
+/* Mobile and Tablet*/
+@media screen and (max-width: 900px) {
+    .form-box{
+        width:90%;
+        font-size: 1.2rem;
+    }
+
+    .form-group{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .form-group input{
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    fieldset{
+        padding:1rem 0.5rem;
+    }
+
+    .checkbox{
+        padding: 1rem 0rem;
+    }
+
+    .district select{
+        padding: .5rem;
+        font-size: 1.2rem;
+    }
+}
