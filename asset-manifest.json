@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/records-system-dashboard/static/css/main.3a4bfc59.css",
+    "main.js": "/records-system-dashboard/static/js/main.2822414a.js",
+    "index.html": "/records-system-dashboard/index.html",
+    "main.3a4bfc59.css.map": "/records-system-dashboard/static/css/main.3a4bfc59.css.map",
+    "main.2822414a.js.map": "/records-system-dashboard/static/js/main.2822414a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a4bfc59.css",
+    "static/js/main.2822414a.js"
+  ]
+}
