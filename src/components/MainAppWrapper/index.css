@@ -1,0 +1,36 @@
+.main-app-section{
+    padding: 0 1rem;
+    flex-basis: 80%;
+}
+  
+.app-banner{
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background: white;
+    padding: .5rem 2rem;
+    position: sticky;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-banner h2{
+    text-align: left;
+    color: #888585;
+}
+
+.burger-menu{
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+/* Mobile and Tablet*/
+@media screen and (max-width: 900px) {
+    .main-app-section{
+        flex-basis: 100%;
+        padding: 0rem 0.4rem;
+        margin: auto;
+        overflow: hidden;
+    }
+}

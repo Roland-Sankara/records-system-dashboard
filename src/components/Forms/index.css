@@ -1,0 +1,105 @@
+.form-box{
+    text-align: left;
+    width:70%;
+    margin: 3rem auto;
+}
+
+.form-box > h3{
+    text-align: center;
+    color: #112B3C;
+    font-weight: 900;
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+}
+
+.form-group input{
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    padding:.5rem 1rem;
+    width: 100%;
+    font-family: inherit;
+    color: #888585;
+    font-size: 1rem;
+    border: 1px solid #888585;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 1rem 0;
+}
+
+fieldset{
+    margin:2rem 0;
+}
+
+.checkbox-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.checkbox{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+}
+
+.contacts{
+    flex-basis: 8rem;
+}
+
+.district select{
+    font-size: 1rem;
+    font-family: inherit;
+    padding: .2rem;
+}
+
+form button{
+    margin: 2rem auto;
+}
+
+.form-error{
+    color:red;
+    font-size: 1rem;
+}
+
+/* Mobile and Tablet*/
+@media screen and (max-width: 900px) {
+    .form-box{
+        width:90%;
+        font-size: 1.2rem;
+    }
+
+    .form-group{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .form-group input{
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    fieldset{
+        padding:1rem 0.5rem;
+    }
+
+    .checkbox{
+        padding: 1rem 0rem;
+    }
+
+    .district select{
+        padding: .5rem;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,50 @@
+.flash-card{
+    display: flex;
+    justify-content: center;
+    gap:2rem;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    background-color: #112B3C;
+    color:white;
+    flex-basis: 35%;
+    width: 100%;
+    transition: .3s;
+    height: 10rem;
+}
+
+.flash-card h4{
+    border-radius: .7rem;
+    padding: .8rem 1.5rem;
+    background-color: #5a5656;
+    flex-basis: 10%;
+}
+
+.details{
+    text-align: left;
+    flex-basis: 50%;
+}
+
+.details p:nth-of-type(1){
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.fa-arrow-right-long{
+    font-size: 2rem;
+    align-self: flex-end;
+}
+
+.flash-card:hover{
+    cursor: pointer;
+    transform: translateX(.5rem);
+}
+
+/* Mobile and Tablet */
+@media screen and (max-width: 900px) {
+    .flash-card{
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto;
+    }
+}
